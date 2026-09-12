@@ -6,6 +6,7 @@ This repository contains my solutions for C# programming assignments.
 
 - Assignment 1
 - Assignment 2
+- Assignment 3
 
 ## Topics Covered
 
