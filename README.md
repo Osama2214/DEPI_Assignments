@@ -1,7 +1,7 @@
 # C# Assignments -- DEPI
 
-This repository contains my solutions and practical assignments
-completed during the DEPI C# training.
+This repository contains my solutions, practical assignments, and final
+project completed during the DEPI C# training.
 
 
 ## 📂 Repository Contents
@@ -25,6 +25,10 @@ All assignments are organized into separate folders:
 7. [Assignment oop 03-DEPI](./Assignment%20oop%2003-DEPI)
 8. [Assignment oop 04-DEPI](./Assignment%20oop%2004-DEPI)
 9. [Session09-Assignment](./Session09-Assignment)
+
+### Final Project
+
+10. [Examination System](./Final_Project_C%23)
 
 
 ## Topics Covered
