@@ -3,19 +3,29 @@
 This repository contains my solutions and practical assignments
 completed during the DEPI C# training.
 
-## Repository Contents
 
-  \#   Assignment / Folder
-  ---- ------------------------------------------------------------------
-  1    [Assignment 01-DEPI](./Assignment%2001-DEPI)
-  2    [Assignment 02-DEPI](./Assignment%2002-DEPI)
-  3    [Assignment 03-DEPI](./Assignment%2003-DEPI)
-  4    [Assignment oop 02-DEPI](./Assignment%20oop%2002-DEPI)
-  5    [Assignment oop 03-DEPI](./Assignment%20oop%2003-DEPI)
-  6    [Assignment oop 04-DEPI](./Assignment%20oop%2004-DEPI)
-  7    [Assignment advanced 01-DEPI](./Assignment%20advanced%2001-DEPI)
-  8    [Assignment advanced 02-DEPI](./Assignment%20advanced%2002-DEPI)
-  9    [Session09-Assignment](./Session09-Assignment)
+## 📂 Repository Contents
+
+All assignments are organized into separate folders:
+
+### Fundamentals
+
+1. [Assignment 01-DEPI](./Assignment%2001-DEPI)
+2. [Assignment 02-DEPI](./Assignment%2002-DEPI)
+3. [Assignment 03-DEPI](./Assignment%2003-DEPI)
+
+### Advanced C#
+
+4. [Assignment advanced 01-DEPI](./Assignment%20advanced%2001-DEPI)
+5. [Assignment advanced 02-DEPI](./Assignment%20advanced%2002-DEPI)
+
+### Object-Oriented Programming (OOP)
+
+6. [Assignment oop 02-DEPI](./Assignment%20oop%2002-DEPI)
+7. [Assignment oop 03-DEPI](./Assignment%20oop%2003-DEPI)
+8. [Assignment oop 04-DEPI](./Assignment%20oop%2004-DEPI)
+9. [Session09-Assignment](./Session09-Assignment)
+
 
 ## Topics Covered
 
