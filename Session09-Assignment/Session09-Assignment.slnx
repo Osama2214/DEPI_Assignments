@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Session09.Console/Session09.Console.csproj" />
+  <Project Path="Session09.Tests/Session09.Tests.csproj" />
+</Solution>
