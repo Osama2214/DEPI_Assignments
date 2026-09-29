@@ -1,0 +1,14 @@
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.AssemblyInfo.cs
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\bin\Debug\net10.0\Assignment advanced 02-DEPI.exe
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\bin\Debug\net10.0\Assignment advanced 02-DEPI.deps.json
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\bin\Debug\net10.0\Assignment advanced 02-DEPI.runtimeconfig.json
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\bin\Debug\net10.0\Assignment advanced 02-DEPI.dll
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\bin\Debug\net10.0\Assignment advanced 02-DEPI.pdb
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.dll
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\refint\Assignment advanced 02-DEPI.dll
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.pdb
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\Assignment advanced 02-DEPI.genruntimeconfig.cache
+C:\Users\pc\Desktop\Assignment advanced 02-DEPI\obj\Debug\net10.0\ref\Assignment advanced 02-DEPI.dll
