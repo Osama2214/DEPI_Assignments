@@ -29,10 +29,11 @@ All assignments are organized into separate folders:
 ### LINQ
 
 10. [Assignment LINQ 01-DEPI](./Assignment%20LINQ%2001-DEPI)
+11. [Assignment LINQ 02-DEPI](./Assignment%20LINQ%2002-DEPI)
 
 ### Final Project
 
-11. [Examination System](./Final_Project_C%23)
+12. [Examination System](./Final_Project_C%23)
 
 
 ## Topics Covered
@@ -54,6 +55,8 @@ following C# and .NET topics, depending on the assignment:
 -   Events and multicast delegates
 -   LINQ query syntax and method syntax
 -   LINQ restriction, element, aggregate, ordering, and transformation operators
+-   LINQ set, partitioning, quantifier, and grouping operators
+-   Custom equality comparers for grouping words with the same characters
 -   Additional C# language features and practice exercises
 
 ## Technologies
