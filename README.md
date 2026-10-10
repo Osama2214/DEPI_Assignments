@@ -26,9 +26,13 @@ All assignments are organized into separate folders:
 8. [Assignment oop 04-DEPI](./Assignment%20oop%2004-DEPI)
 9. [Session09-Assignment](./Session09-Assignment)
 
+### LINQ
+
+10. [Assignment LINQ 01-DEPI](./Assignment%20LINQ%2001-DEPI)
+
 ### Final Project
 
-10. [Examination System](./Final_Project_C%23)
+11. [Examination System](./Final_Project_C%23)
 
 
 ## Topics Covered
@@ -48,6 +52,8 @@ following C# and .NET topics, depending on the assignment:
     `Predicate<>`)
 -   Lambda expressions and anonymous methods
 -   Events and multicast delegates
+-   LINQ query syntax and method syntax
+-   LINQ restriction, element, aggregate, ordering, and transformation operators
 -   Additional C# language features and practice exercises
 
 ## Technologies
