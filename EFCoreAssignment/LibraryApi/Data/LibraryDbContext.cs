@@ -3,13 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Data;
 
-public class LibraryDbContext(DbContextOptions<LibraryDbContext> options)
-    : DbContext(options)
+public class LibraryDbContext : DbContext
 {
-    public DbSet<Author> Authors => Set<Author>();
-    public DbSet<Book> Books => Set<Book>();
-    public DbSet<Borrower> Borrowers => Set<Borrower>();
-    public DbSet<Loan> Loans => Set<Loan>();
+    public LibraryDbContext(DbContextOptions<LibraryDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<Borrower> Borrowers { get; set; }
+    public DbSet<Loan> Loans { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

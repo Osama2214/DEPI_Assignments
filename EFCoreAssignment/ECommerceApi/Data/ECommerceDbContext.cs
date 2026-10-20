@@ -3,14 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceApi.Data;
 
-public class ECommerceDbContext(DbContextOptions<ECommerceDbContext> options)
-    : DbContext(options)
+public class ECommerceDbContext : DbContext
 {
-    public DbSet<Category> Categories => Set<Category>();
-    public DbSet<Product> Products => Set<Product>();
-    public DbSet<Customer> Customers => Set<Customer>();
-    public DbSet<Order> Orders => Set<Order>();
-    public DbSet<OrderDetail> OrderDetails => Set<OrderDetail>();
+    public ECommerceDbContext(DbContextOptions<ECommerceDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderDetail> OrderDetails { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
