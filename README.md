@@ -31,9 +31,13 @@ All assignments are organized into separate folders:
 10. [Assignment LINQ 01-DEPI](./Assignment%20LINQ%2001-DEPI)
 11. [Assignment LINQ 02-DEPI](./Assignment%20LINQ%2002-DEPI)
 
+### Entity Framework Core
+
+12. [EF Core Assignment](./EFCoreAssignment)
+
 ### Final Project
 
-12. [Examination System](./Final_Project_C%23)
+13. [Examination System](./Final_Project_C%23)
 
 
 ## Topics Covered
@@ -57,12 +61,19 @@ following C# and .NET topics, depending on the assignment:
 -   LINQ restriction, element, aggregate, ordering, and transformation operators
 -   LINQ set, partitioning, quantifier, and grouping operators
 -   Custom equality comparers for grouping words with the same characters
+-   ASP.NET Core Web API projects
+-   Entity Framework Core and Code First migrations
+-   SQL Server database relationships and diagrams
+-   Navigation properties and Fluent API configuration
 -   Additional C# language features and practice exercises
 
 ## Technologies
 
 -   C#
 -   .NET
+-   ASP.NET Core Web API
+-   Entity Framework Core
+-   SQL Server
 -   Visual Studio Code
 -   Git and GitHub
 
