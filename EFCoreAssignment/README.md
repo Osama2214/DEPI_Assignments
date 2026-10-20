@@ -45,9 +45,9 @@ The current assignment focuses on the database design and EF Core Code First set
 
 ## SQL Server Database Diagram Screenshots
 
-- [ECommerceDb diagram](Diagrams/Database/ECommerceDb_Diagram_SSMS.jpg)
-- [LibraryDb diagram](Diagrams/Database/LibraryDb_Diagram_SSMS.jpg)
-- [HealthCareDb diagram](Diagrams/Database/HealthCareDb_Diagram_SSMS.jpg)
+- [ECommerceDb diagram](Diagrams/Database/ECommerceDb_Diagram_SSMS.png)
+- [LibraryDb diagram](Diagrams/Database/LibraryDb_Diagram_SSMS.png)
+- [HealthCareDb diagram](Diagrams/Database/HealthCareDb_Diagram_SSMS.png)
 
 ## Navigation Property Article
 
