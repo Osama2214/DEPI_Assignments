@@ -69,6 +69,7 @@ following C# and .NET topics, depending on the assignment:
 -   Entity Framework Core and Code First migrations
 -   SQL Server database relationships and diagrams
 -   Navigation properties and Fluent API configuration
+-   Repository and Service patterns, operation results, search, and pagination
 -   Additional C# language features and practice exercises
 
 ## Technologies

@@ -5,6 +5,11 @@ Accept: application/json
 
 ###
 
+GET {{LibraryApi_HostAddress}}/api/authors?pageNumber=1&pageSize=2&searchTerm=Naguib
+Accept: application/json
+
+###
+
 POST {{LibraryApi_HostAddress}}/api/authors
 Content-Type: application/json
 

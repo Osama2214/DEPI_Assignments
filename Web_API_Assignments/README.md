@@ -43,6 +43,23 @@ hidden automatically by global query filters.
 - Initial author data loaded from JSON.
 - Swagger UI for testing the endpoints.
 
+## Session Three Features
+
+- Generic Repository for CRUD operations, including composite keys.
+- Author Repository with name search and pagination.
+- Author Service for DTO mapping and operation results.
+- Result Pattern using `Result` and `GenericResult<T>`.
+- `PaginatedList<T>` with page metadata and a maximum page size of 20.
+- Scoped repository and service registration through dependency injection.
+
+Authors now use the Controller → Service → Repository flow. Books, Borrowers,
+and Loans keep their existing Session Two endpoints.
+
+`GET /api/authors?pageNumber=1&pageSize=10&searchTerm=Naguib` returns a
+result whose `value` contains `data`, `pageNumber`, `pageSize`, `totalRecords`,
+and `totalPages`. Author read and create responses use `value` for the DTO;
+successful updates and deletes still return `204 No Content`.
+
 ## Technologies
 
 - ASP.NET Core Web API
@@ -66,7 +83,10 @@ LibraryApi/
 ├── Extensions/
 ├── Helper/
 ├── Migrations/
-└── Models/
+├── Models/
+├── Repositories/
+├── Results/
+└── Services/
 ```
 
 ## Database Diagrams

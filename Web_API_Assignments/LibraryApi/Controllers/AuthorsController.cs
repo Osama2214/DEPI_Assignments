@@ -1,9 +1,8 @@
-using AutoMapper;
-using LibraryApi.Data;
+using System.ComponentModel.DataAnnotations;
 using LibraryApi.Dtos.AuthorDtos;
-using LibraryApi.Models;
+using LibraryApi.Results;
+using LibraryApi.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Controllers;
 
@@ -11,95 +10,51 @@ namespace LibraryApi.Controllers;
 [ApiController]
 public class AuthorsController : ControllerBase
 {
-    private readonly LibraryDbContext _context;
-    private readonly IMapper _mapper;
+    private readonly IAuthorService _service;
 
-    public AuthorsController(LibraryDbContext context, IMapper mapper)
+    public AuthorsController(IAuthorService service)
     {
-        _context = context;
-        _mapper = mapper;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAuthors()
+    public async Task<IActionResult> GetAuthors(
+        [Range(1, int.MaxValue)] int pageNumber = 1,
+        [Range(1, int.MaxValue)] int pageSize = 10,
+        string? searchTerm = null)
     {
-        var authors = await _context.Authors
-            .AsNoTracking()
-            .ToListAsync();
-
-        var response = _mapper.Map<List<Author>, List<GetAuthorResponse>>(authors);
-        return Ok(response);
+        var result = await _service.GetAllAsync(pageNumber, pageSize, searchTerm);
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetAuthor(int id)
     {
-        var author = await _context.Authors
-            .AsNoTracking()
-            .FirstOrDefaultAsync(author => author.Id == id);
-
-        if (author == null)
-        {
-            return NotFound($"Author with Id = {id} is not found.");
-        }
-
-        var response = _mapper.Map<Author, GetAuthorResponse>(author);
-        return Ok(response);
+        var result = await _service.GetByIdAsync(id);
+        return result.IsSuccess ? Ok(result) : NotFound(result);
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateAuthor(CreateAuthorRequest request)
     {
-        var author = new Author
-        {
-            Name = request.Name,
-            BirthDate = request.BirthDate
-        };
-
-        await _context.Authors.AddAsync(author);
-        await _context.SaveChangesAsync();
-
-        var response = _mapper.Map<Author, GetAuthorResponse>(author);
-        return CreatedAtAction(nameof(GetAuthor), new { id = author.Id }, response);
+        var result = await _service.CreateAsync(request);
+        return CreatedAtAction(nameof(GetAuthor), new { id = result.Value!.Id }, result);
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAuthor(int id, UpdateAuthorRequest request)
     {
         if (id != request.Id)
-        {
-            return BadRequest();
-        }
+            return BadRequest(Result.Failure("Route id must match the author id."));
 
-        var author = await _context.Authors
-            .FirstOrDefaultAsync(author => author.Id == id);
-
-        if (author == null)
-        {
-            return NotFound($"Author with Id = {id} is not found.");
-        }
-
-        author.Name = request.Name;
-        author.BirthDate = request.BirthDate;
-
-        await _context.SaveChangesAsync();
-        return NoContent();
+        var result = await _service.UpdateAsync(request);
+        return result.IsSuccess ? NoContent() : NotFound(result);
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAuthor(int id)
     {
-        var author = await _context.Authors
-            .FirstOrDefaultAsync(author => author.Id == id);
-
-        if (author == null)
-        {
-            return NotFound($"Author with Id = {id} is not found.");
-        }
-
-        author.IsDeleted = true;
-        await _context.SaveChangesAsync();
-
-        return NoContent();
+        var result = await _service.DeleteAsync(id);
+        return result.IsSuccess ? NoContent() : NotFound(result);
     }
 }
