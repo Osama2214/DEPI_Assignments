@@ -1,5 +1,7 @@
 using LibraryApi.Data;
+using LibraryApi.Data.Interceptors;
 using LibraryApi.Helper;
+using LibraryApi.Middlewares;
 using LibraryApi.Repositories;
 using LibraryApi.Services;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +19,9 @@ public static class ApplicationServiceExtension
 
         services.AddDbContext<LibraryDbContext>(options =>
             options.UseSqlServer(
-                configuration.GetConnectionString("DefaultConnection")));
+                configuration.GetConnectionString("DefaultConnection"))
+                .AddInterceptors(new SoftDeleteInterceptor(),
+                    new CreatedAtInterceptor(), new ModifiedAtInterceptor()));
 
         services.AddAutoMapper(options =>
             options.AddProfile<LibraryProfile>());
@@ -25,6 +29,7 @@ public static class ApplicationServiceExtension
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IAuthorRepository, AuthorRepository>();
         services.AddScoped<IAuthorService, AuthorService>();
+        services.AddTransient<RequestIdHeaderMiddleware>();
 
         return services;
     }

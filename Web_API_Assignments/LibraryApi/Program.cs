@@ -1,5 +1,6 @@
 using LibraryApi.Data;
 using LibraryApi.Extensions;
+using LibraryApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,11 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(exception, "An error occurred while preparing the database.");
     }
 }
+
+app.UseMiddleware<RequestTimingMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<RequestIdHeaderMiddleware>();
+app.UseMiddleware<RateLimitingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

@@ -70,6 +70,7 @@ following C# and .NET topics, depending on the assignment:
 -   SQL Server database relationships and diagrams
 -   Navigation properties and Fluent API configuration
 -   Repository and Service patterns, operation results, search, and pagination
+-   Custom middleware, request tracing, rate limiting, and EF Core interceptors
 -   Additional C# language features and practice exercises
 
 ## Technologies

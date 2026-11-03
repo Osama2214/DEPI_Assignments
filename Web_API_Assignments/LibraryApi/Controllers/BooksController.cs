@@ -102,7 +102,7 @@ public class BooksController : ControllerBase
             return NotFound($"Book with Id = {id} is not found.");
         }
 
-        book.IsDeleted = true;
+        _context.Books.Remove(book);
         await _context.SaveChangesAsync();
 
         return NoContent();

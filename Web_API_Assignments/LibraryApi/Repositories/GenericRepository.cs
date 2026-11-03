@@ -43,7 +43,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         if (entity == null)
             return false;
 
-        entity.IsDeleted = true;
+        _context.Set<T>().Remove(entity);
         await _context.SaveChangesAsync();
         return true;
     }

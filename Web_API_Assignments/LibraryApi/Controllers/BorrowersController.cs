@@ -98,7 +98,7 @@ public class BorrowersController : ControllerBase
             return NotFound($"Borrower with Id = {id} is not found.");
         }
 
-        borrower.IsDeleted = true;
+        _context.Borrowers.Remove(borrower);
         await _context.SaveChangesAsync();
 
         return NoContent();

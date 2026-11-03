@@ -113,7 +113,7 @@ public class LoansController : ControllerBase
             return NotFound("Loan is not found.");
         }
 
-        loan.IsDeleted = true;
+        _context.Loans.Remove(loan);
         await _context.SaveChangesAsync();
 
         return NoContent();

@@ -60,6 +60,17 @@ result whose `value` contains `data`, `pageNumber`, `pageSize`, `totalRecords`,
 and `totalPages`. Author read and create responses use `value` for the DTO;
 successful updates and deletes still return `204 No Content`.
 
+## Session Four Features
+
+- Exception middleware returns `500` Problem Details with a trace ID.
+- Exception details are shown only in Development.
+- Request timing middleware logs the method, path, status, and elapsed time.
+- Request ID middleware adds the `X-Request-Id` response header.
+- Rate limiting allows 10 requests per 10-second window for the application instance.
+  Additional requests return `429` with a `Retry-After` header.
+- EF Core interceptors set UTC creation and modification dates and convert
+  deletes into soft deletes for both synchronous and asynchronous saves.
+
 ## Technologies
 
 - ASP.NET Core Web API
@@ -78,11 +89,14 @@ LibraryApi/
 ├── Controllers/
 ├── Data/
 │   ├── Configurations/
+│   ├── Interceptors/
 │   └── Seeding/
 ├── Dtos/
+├── Errors/
 ├── Extensions/
 ├── Helper/
 ├── Migrations/
+├── Middlewares/
 ├── Models/
 ├── Repositories/
 ├── Results/
