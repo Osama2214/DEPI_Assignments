@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using LibraryApi.Dtos.AuthorDtos;
+using LibraryApi.Filters;
 using LibraryApi.Results;
 using LibraryApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,9 @@ namespace LibraryApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[ServiceFilter(typeof(ActionExecutionLoggingFilter))]
+[ServiceFilter(typeof(ActionTimingFilter))]
+[ServiceFilter(typeof(ExceptionHandlingFilter))]
 public class AuthorsController : ControllerBase
 {
     private readonly IAuthorService _service;

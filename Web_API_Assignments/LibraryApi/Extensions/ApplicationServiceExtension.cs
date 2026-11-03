@@ -1,5 +1,6 @@
 using LibraryApi.Data;
 using LibraryApi.Data.Interceptors;
+using LibraryApi.Filters;
 using LibraryApi.Helper;
 using LibraryApi.Middlewares;
 using LibraryApi.Repositories;
@@ -30,6 +31,9 @@ public static class ApplicationServiceExtension
         services.AddScoped<IAuthorRepository, AuthorRepository>();
         services.AddScoped<IAuthorService, AuthorService>();
         services.AddTransient<RequestIdHeaderMiddleware>();
+        services.AddScoped<ActionExecutionLoggingFilter>();
+        services.AddScoped<ActionTimingFilter>();
+        services.AddScoped<ExceptionHandlingFilter>();
 
         return services;
     }

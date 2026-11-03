@@ -71,6 +71,14 @@ successful updates and deletes still return `204 No Content`.
 - EF Core interceptors set UTC creation and modification dates and convert
   deletes into soft deletes for both synchronous and asynchronous saves.
 
+## Session Five Features
+
+- MVC action logging filter records action start, completion, and unhandled failures.
+- Async action timing filter records elapsed time, including failed actions.
+- Exception filter returns Problem Details for unhandled Authors action exceptions.
+- Filters are scoped services applied to Authors through `ServiceFilter`.
+- The exception middleware still handles failures outside the filtered MVC actions.
+
 ## Technologies
 
 - ASP.NET Core Web API
@@ -94,6 +102,7 @@ LibraryApi/
 ├── Dtos/
 ├── Errors/
 ├── Extensions/
+├── Filters/
 ├── Helper/
 ├── Migrations/
 ├── Middlewares/
