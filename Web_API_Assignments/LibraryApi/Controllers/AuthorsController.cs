@@ -3,12 +3,14 @@ using LibraryApi.Dtos.AuthorDtos;
 using LibraryApi.Filters;
 using LibraryApi.Results;
 using LibraryApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 [ServiceFilter(typeof(ActionExecutionLoggingFilter))]
 [ServiceFilter(typeof(ActionTimingFilter))]
 [ServiceFilter(typeof(ExceptionHandlingFilter))]

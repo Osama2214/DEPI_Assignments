@@ -79,6 +79,24 @@ successful updates and deletes still return `204 No Content`.
 - Filters are scoped services applied to Authors through `ServiceFilter`.
 - The exception middleware still handles failures outside the filtered MVC actions.
 
+## Session Six Features
+
+- ASP.NET Core Identity with a separate authentication database.
+- Anonymous account registration and login endpoints.
+- JWTs signed with HMAC SHA256, with issuer, audience, signature, and lifetime validation.
+- JWT authorization on Authors, matching the protected Categories example in the demo.
+- Swagger Bearer authorization and a named CORS policy using configured origins.
+- Automatic migrations for both the library and authentication databases.
+
+Register with `POST /api/account/register`, then log in through
+`POST /api/account/login`. Copy the token from `value` into Swagger's Authorize
+dialog or send it as `Authorization: Bearer <token>`.
+
+The JWT signing key is stored outside the repository in User Secrets for local
+development, or in `Jwt__Key` for other environments. A key with at least 32
+bytes is required. `Cors:AllowedOrigins` is empty by default; add the frontend
+origins you want to allow. An empty list does not enable cross-origin access.
+
 ## Technologies
 
 - ASP.NET Core Web API
@@ -86,6 +104,7 @@ successful updates and deletes still return `204 No Content`.
 - Entity Framework Core 10
 - SQL Server LocalDB
 - AutoMapper
+- ASP.NET Core Identity and JWT Bearer authentication
 - Swagger
 - DTOs
 - Async/Await
@@ -121,10 +140,24 @@ LibraryApi/
 
 ```powershell
 dotnet tool restore
+```
+
+For a fresh checkout, configure a local signing key once:
+
+```powershell
+$jwtKey = [Convert]::ToBase64String([System.Security.Cryptography.RandomNumberGenerator]::GetBytes(64))
+dotnet user-secrets set "Jwt:Key" $jwtKey --project LibraryApi
+Remove-Variable jwtKey
+```
+
+Then start the API:
+
+```powershell
 dotnet run --project LibraryApi
 ```
 
-The database is migrated and seeded automatically when the project starts.
+The library database is migrated and seeded automatically when the project starts.
+The separate `LibraryAuthDb` database is migrated automatically as well.
 Swagger UI is available at `/swagger` in the development environment.
 
 The request examples are available in `LibraryApi/LibraryApi.http`.

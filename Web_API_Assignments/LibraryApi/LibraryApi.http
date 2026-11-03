@@ -1,16 +1,42 @@
 @LibraryApi_HostAddress = http://localhost:5087
+@token = PASTE_LOGIN_TOKEN_HERE
+
+###
+
+POST {{LibraryApi_HostAddress}}/api/account/register
+Content-Type: application/json
+
+{
+  "email": "student@example.com",
+  "password": "Example!Password123"
+}
+
+###
+
+POST {{LibraryApi_HostAddress}}/api/account/login
+Content-Type: application/json
+
+{
+  "email": "student@example.com",
+  "password": "Example!Password123"
+}
+
+###
 
 GET {{LibraryApi_HostAddress}}/api/authors
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
 GET {{LibraryApi_HostAddress}}/api/authors?pageNumber=1&pageSize=2&searchTerm=Naguib
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
 POST {{LibraryApi_HostAddress}}/api/authors
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {

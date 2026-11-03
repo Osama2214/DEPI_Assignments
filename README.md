@@ -72,6 +72,7 @@ following C# and .NET topics, depending on the assignment:
 -   Repository and Service patterns, operation results, search, and pagination
 -   Custom middleware, request tracing, rate limiting, and EF Core interceptors
 -   MVC action logging, action timing, and exception filters
+-   ASP.NET Core Identity, JWT authentication and authorization, and CORS
 -   Additional C# language features and practice exercises
 
 ## Technologies

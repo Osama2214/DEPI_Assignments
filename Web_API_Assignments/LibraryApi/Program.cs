@@ -21,6 +21,8 @@ using (var scope = app.Services.CreateScope())
         await context.Database.MigrateAsync();
         await StoreContextSeeding.SeedAsync(
             context, app.Environment.ContentRootPath);
+        var authenticationContext = services.GetRequiredService<AuthenticationDbContext>();
+        await authenticationContext.Database.MigrateAsync();
     }
     catch (Exception exception)
     {
@@ -40,6 +42,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors(ApplicationServiceExtension.CorsPolicyName);
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.MapGet("/", () => "Library database is ready.");
