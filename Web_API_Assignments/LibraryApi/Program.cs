@@ -27,6 +27,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception exception)
     {
         logger.LogError(exception, "An error occurred while preparing the database.");
+        throw;
     }
 }
 

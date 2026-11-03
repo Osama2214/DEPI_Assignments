@@ -9,7 +9,7 @@ public static class StoreContextSeeding
     public static async Task SeedAsync(
         LibraryDbContext context, string contentRootPath)
     {
-        if (await context.Authors.AnyAsync())
+        if (await context.Authors.IgnoreQueryFilters().AnyAsync())
         {
             return;
         }
